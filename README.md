@@ -34,20 +34,20 @@ For macOS and Linux (using terminal):
 Run the application with:
   Windows:
 ```bash
-	python your_script.py
+	python Yt_manager.py
 ```
   macOS/Linux:
 ```bash
-	python3 your_script.py
+	python3 Yt_manager.py
 ```
 
 ## Get Help
 For help on usage, you can run the help flag (--help):
   Windows:
 ```bash
-	python your_script.py --help
+	python Yt_manager.py --help
 ```
   macOS/Linux:
 ```bash
-	python3 your_script.py --help
+	python3 Yt_manager.py --help
 ```
