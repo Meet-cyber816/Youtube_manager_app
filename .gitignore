@@ -1,0 +1,21 @@
+
+### 3. **Update `.gitignore`**
+
+You can still create a `.gitignore` file to exclude unnecessary files such as the following:
+
+```plaintext
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# IDEs and Editors
+.vscode/
+.idea/
+
+# Other
+*.log
+
