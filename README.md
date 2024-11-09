@@ -17,7 +17,7 @@ Clone this repository:
 git clone https://github.com/Meet-cyber816/Youtube_manager_app.git
 cd Youtube_manager_app
 ```
-Note: First try to run the script if it runs fine then you don't need to intsall requirements.txt.
+Note: First, try running the script. If it executes successfully, there is no need to install the requirements from requirements.txt. Otherwise, you will encounter an error indicating that the required dependencies are missing. 
  
 ## Install Dependencies
 To install the required Python packages, use the following command for your operating system:
