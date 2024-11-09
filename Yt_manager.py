@@ -115,7 +115,7 @@ def main_menu():
     clear_screen()
     print("\n" + "#" * 120)
     print(" " * 45, "YouTube Manager App")
-    #print(" " * 45, "Creator: Meet Panchal")
+    print(" " * 45, "Creator: Meet Panchal")
     print("#" * 120)
     while True:
         print("\n")
