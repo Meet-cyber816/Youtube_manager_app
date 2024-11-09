@@ -18,7 +18,7 @@ Clone this repository:
 	cd Youtube_manager_app
 ```
 
-##Install Dependencies
+## Install Dependencies
 To install the required Python packages, use the following command for your operating system:
 
 For Windows (using Command Prompt or PowerShel):
@@ -30,7 +30,7 @@ For macOS and Linux (using terminal):
 	pip3 install -r requirements.txt
 ```
 
-##Usage
+## Usage
 Run the application with:
   Windows:
 ```bash
@@ -41,7 +41,7 @@ Run the application with:
 	python3 your_script.py
 ```
 
-##Get Help
+## Get Help
 For help on usage, you can run the help flag (--help):
   Windows:
 ```bash
