@@ -4,6 +4,15 @@ import os
 import argparse
 import textwrap
 
+banner = r"""
+ __   __         _____      _            __  __                                   
+ \ \ / /__  _   |_   _|   _| |__   ___  |  \/  | __ _ _ __   __ _  __ _  ___ _ __ 
+  \ V / _ \| | | || || | | | '_ \ / _ \ | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '__|
+   | | (_) | |_| || || |_| | |_) |  __/ | |  | | (_| | | | | (_| | (_| |  __/ |   
+   |_|\___/ \__,_||_| \__,_|_.__/ \___| |_|  |_|\__,_|_| |_|\__,_|\__, |\___|_|   
+                                                                  |___/                    
+"""
+
 conn = sqlite3.connect('youtube_videos.db')
 cursor = conn.cursor()
 
@@ -113,10 +122,9 @@ def export_to_csv(filename="videos.csv"):
 
 def main_menu():
     clear_screen()
-    print("\n" + "#" * 120)
-    print(" " * 45, "YouTube Manager App")
-    print(" " * 45, "Creator: Meet Panchal")
-    print("#" * 120)
+    print(banner)
+    print(" " * 69,"Version: 1.0")
+    print(" " * (51-10), "Quick video management, no clicks needed")
     while True:
         print("\n")
         print("1. List videos")
@@ -145,7 +153,7 @@ def main_menu():
         elif choice == '4':
             batch_delete_videos()
         elif choice == '5':
-            keyword = input("Enter search keyword: ")
+            keyword = input("Enter search keyword (category): ")
             search_video(keyword)
         elif choice == '6':
             filename = input("Enter filename for export (default 'videos.csv'): ").strip() or "videos.csv"
@@ -161,23 +169,29 @@ def main_menu():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
      description=textwrap.dedent("""
-        YouTube Manager App: A powerful command-line tool for organizing and managing your personal YouTube video and playlist library. 
-        This tool allows you to catalog video links, set custom categories, and access your videos or playlists directly from the terminal.
+        Description:
+              A powerful command-line tool for organizing and managing your personal YouTube video and playlist library. 
+              This tool allows you to catalog video links, set custom categories, and access your videos or playlists directly from the terminal.
 
-        Features:
-        - Add Video and Playlist Links: Save both individual video and playlist links by naming them and setting custom categories. 
-          This enables easy access to your saved content just by clicking the link.
-        - Categorization: Organize videos and playlists with custom categories, allowing for a structured library tailored to your needs. 
-          Use the search feature to quickly find content based on categories.
-        - Search Functionality: Find videos and playlists effortlessly by searching within your chosen categories. This ensures you can 
-          locate specific types of content without sifting through your entire library.
-        - Sort and Export: Sort your collection by name, duration, or date added for easier viewing. Export all data to a CSV file for backup 
-          or further analysis.
+        Features:           
+            - Add Video and Playlist Links: Save both individual video and playlist links by naming them and setting custom categories. 
+              This enables easy access to your saved content just by clicking the link.
+            - Categorization: Organize videos and playlists with custom categories, allowing for a structured library tailored to your needs. 
+              Use the search feature to quickly find content based on categories.
+            - Search Functionality: Find videos and playlists effortlessly by searching within your chosen categories. This ensures you can 
+              locate specific types of content without sifting through your entire library.
+            - Sort and Export: Sort your collection by name, duration, or date added for easier viewing. Export all data to a CSV file for backup 
+              or further analysis.
 
         Ideal for YouTube enthusiasts, educators, and content creators looking to maintain a streamlined library of videos and playlists, 
         this tool provides a quick and efficient way to manage your content without the need for a complex interface.
+        
+        Creator:
+              Meet Panchal
+              Contact: meet24086@gmail.com   
+                                                     
     """),
-    epilog="Creator: Meet Panchal | Contact: meet24086@gmail.com",
+    #epilog="Author: Meet Panchal | Contact: meet24086@gmail.com",
     formatter_class=argparse.RawTextHelpFormatter
 )
     args = parser.parse_args()
